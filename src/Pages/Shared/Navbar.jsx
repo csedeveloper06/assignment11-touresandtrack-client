@@ -69,7 +69,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <img className="w-20 h-20 rounded-full mr-4" src="https://i.ibb.co/x3RPF21/icon.png" alt="" />
+        <img className="w-20 h-20 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png" alt="" />
         <a className="btn btn-warning font-bold">Login</a>
       </div>
     </div>
