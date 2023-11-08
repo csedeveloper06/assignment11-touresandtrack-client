@@ -1,40 +1,168 @@
-
+import counter from '../../../counter.json'
+import Lottie from 'lottie-react';
 
 const Banner = () => {
-    return (
-        <div>
-            <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src="" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a> 
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a> 
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a> 
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div> 
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="/" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                    <a href="#slide3" className="btn btn-circle">❮</a> 
-                    <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
+  return (
+    <div>
+      {/* images */}
+      <div className="max-w-screen-xl p-5 mx-auto bg-gray-100 text-gray-800">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
+          <div
+            className="relative flex items-end justify-start w-full text-left bg-center bg-cover h-96 bg-gray-500"
+            style={{
+              backgroundImage: `url("https://i.ibb.co/5YxR8GW/s3.jpg")`,
+            }}
+          >
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
+            <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bgundefined"
+              >
+                Politics
+              </a>
+              <div className="flex flex-col justify-start text-center text-gray-100">
+                <span className="text-3xl font-semibold leadi tracki">04</span>
+                <span className="leadi uppercase">Aug</span>
+              </div>
             </div>
+            <h2 className="z-10 p-5">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="font-medium text-md hover:underline text-gray-100"
+              >
+                {" "}
+                Autem sunt tempora mollitia magnam non voluptates
+              </a>
+            </h2>
+          </div>
+          <div
+            className="relative flex items-end justify-start w-full text-left bg-center bg-cover h-96 bg-gray-500"
+            style={{
+              backgroundImage: `url("https://i.ibb.co/jzNb1y9/Taj-Mahal.webp")`,
+            }}
+          >
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
+            <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bgundefined"
+              >
+                Health
+              </a>
+              <div className="flex flex-col justify-start text-center text-gray-100">
+                <span className="text-3xl font-semibold leadi tracki">01</span>
+                <span className="leadi uppercase">Aug</span>
+              </div>
+            </div>
+            <h2 className="z-10 p-5">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="font-medium text-md hover:underline text-gray-100"
+              >
+                Inventore reiciendis aliquam excepturi
+              </a>
+            </h2>
+          </div>
+          <div
+            className="relative flex items-end justify-start w-full text-left bg-center bg-cover h-96 bg-gray-500"
+            style={{
+              backgroundImage: `url("https://i.ibb.co/yhx376j/england.jpg")`,
+            }}
+          >
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
+            <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bgundefined"
+              >
+                Science
+              </a>
+              <div className="flex flex-col justify-start text-center text-gray-100">
+                <span className="text-3xl font-semibold leadi tracki">28</span>
+                <span className="leadi uppercase">Jul</span>
+              </div>
+            </div>
+            <h2 className="z-10 p-5">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="font-medium text-md hover:underline text-gray-100"
+              >
+                Officiis mollitia dignissimos commodi optio vero animi
+              </a>
+            </h2>
+          </div>
+          <div
+            className="relative flex items-end justify-start w-full text-left bg-center bg-cover h-96 bg-gray-500"
+            style={{
+              backgroundImage: `url("https://i.ibb.co/QHpGVkG/s4.jpg")`,
+            }}
+          >
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
+            <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="px-3 py-2 text-xs font-semibold tracki uppercase text-gray-100 bgundefined"
+              >
+                Sports
+              </a>
+              <div className="flex flex-col justify-start text-center text-gray-100">
+                <span className="text-3xl font-semibold leadi tracki">19</span>
+                <span className="leadi uppercase">Jul</span>
+              </div>
+            </div>
+            <h2 className="z-10 p-5">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className="font-medium text-md hover:underline text-gray-100"
+              >
+                Doloribus sit illo necessitatibus architecto exercitationem enim
+              </a>
+            </h2>
+          </div>
         </div>
-    );
+      </div>
+      {/* counter */}
+      <div className="flex gap-5">
+        <div>
+          <span className="countdown font-mono text-4xl">
+            <span style={{ "--value": 15 }}></span>
+          </span>
+          days
+        </div>
+        <div>
+          <span className="countdown font-mono text-4xl">
+            <span style={{ "--value": 10 }}></span>
+          </span>
+          hours
+        </div>
+        <div>
+          <span className="countdown font-mono text-4xl">
+            <span style={{ "--value": 24 }}></span>
+          </span>
+          min
+        </div>
+        <div>
+          <span className="countdown font-mono text-4xl">
+            <span style={{ "--value": 51 }}></span>
+          </span>
+          sec
+        </div>
+      </div>
+      <div className='flex items-center justify-center'>
+        <Lottie className='w-40 h-32' animationData={counter} />
+        <button className="btn btn-warning w-1/3">Book Now</button>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
