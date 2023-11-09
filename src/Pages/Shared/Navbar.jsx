@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navLinks = (
@@ -8,7 +8,7 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/allservices">All Services</NavLink>
         </li>
         <li tabIndex={0}>
           <details>
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <img className="w-16 h-16 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png" alt="" />
-        <a className="btn btn-warning font-bold">Login</a>
+        <Link className="btn btn-warning font-bold" to='/login'>Login</Link>
       </div>
     </div>
   );

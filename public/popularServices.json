@@ -1,0 +1,50 @@
+[
+    {
+        "id": "14",
+        "name": "A Majestic Journey to The Bandarban",
+        "image": "https://i.ibb.co/mBNhwP7/bandorban.jpg",
+        "description": "A Guided Tour of the  A picturesque area with charming villages, rolling hills",
+        "providerimage": "provider4.jpg",
+        "providername": "Rony Ross",
+        "area": "Bangladesh",
+        "tourstarts": "8/01/2024",
+        "tourends": "10/01/2024",
+        "price": "$800"
+      },
+    {
+        "id": "05",
+        "name": "A Royal Rendezvous with the Taj Mahal",
+        "image": "https://i.ibb.co/jzNb1y9/TajMahal.webp",
+        "description": "A Guided Tour of the Journey through the pages of history",
+        "providerimage": "provider4.jpg",
+        "providername": "Rony Ross",
+        "area": "India",
+        "tourstarts": "15/12/2023",
+        "tourends": "20/12/2023",
+        "price": "$1000"
+      },
+      {
+        "id": "10",
+        "name": "A Majestic Journey Buckingham Palace",
+        "image": "https://i.ibb.co/hshYQmV/BuckinghamPalace.webp",
+        "description": "A Guided Tour of The official residence of the British monarch, known for the Changing of the Guard ceremony",
+        "providerimage": "provider4.jpg",
+        "providername": "Rony Ross",
+        "area": "England",
+        "tourstarts": "8/01/2024",
+        "tourends": "15/01/2024",
+        "price": "$2000"
+      },
+      {
+        "id": "21",
+        "name": "A Majestic Journey to Lauterbrunnen Valley",
+        "image": "https://i.ibb.co/BfPwTKJ/valley.webp",
+        "description": "A Guided Tour of A picturesque valley with 72 waterfalls, surrounded by high cliffs and dotted with charming village",
+        "providerimage": "provider4.jpg",
+        "providername": "Alex Hunter",
+        "area": "Switzerland",
+        "tourstarts": "8/01/2024",
+        "tourends": "15/01/2024",
+        "price": "$2000"
+      }
+]
