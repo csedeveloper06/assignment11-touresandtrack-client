@@ -8,15 +8,18 @@ const PopularCard = ({popular}) => {
             <div className="card w-96 h-[500px] bg-base-100 shadow-xl">
                 <figure><img src={image} alt="" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
-                    <p>Description:{description}</p>
+                    <h2 className="card-title text-orange-500 font-bold">{name}</h2>
+                    <p className="text-sm text-gray-400">{description}</p>
                     <div className="card-actions justify-end">
-                        <div>
+                        <div className="flex justify-center items-center">
                             <img src="" alt="" />
-                            <p>{providername}</p>
+                            <p className="font-bold text-2xl text-orange-400">{providername}</p>
                         </div>
-                        <p> Area:{area}</p>
-                        <p>Price:{price}</p>
+                       <div className="font-bold text-orange-500 text-2xl text-center">
+                            <p>{area}</p>
+                            <p>{price}</p>
+                       </div> 
+                       <button className="btn btn-primary font-bold">View Details</button> 
                     </div>
                 </div>
             </div>

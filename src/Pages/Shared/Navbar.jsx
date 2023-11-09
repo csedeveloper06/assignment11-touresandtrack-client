@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch();
+  };
+
   const navLinks = (
     <>
       <ul className="lg:flex lg:gap-3">
@@ -58,19 +68,43 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="avatar p-3">
-          <div className="w-16 rounded-full">
-            <img className="w-16 h-16 rounded-s-full" src="https://i.ibb.co/nc4wTyB/logo.png" alt="" />
-         </div>
-          <a className="btn btn-ghost normal-case text-sm font-bold text-red-600">ToursNTracks</a>
+        <div className="avatar w-16 h-16 rounded-full p-3">
+          <img src="https://i.ibb.co/nc4wTyB/logo.png" alt="" />
+          <a className="btn btn-ghost normal-case text-sm font-bold text-red-600">
+            ToursNTracks
+          </a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <img className="w-16 h-16 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png" alt="" />
-        <Link className="btn btn-warning font-bold" to='/login'>Login</Link>
+        <div>
+          { user ? <img className="w-16 h-16 rounded-full" src={user.photoURL} alt="" />
+           : 
+          <img className="w-16 h-16 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png"/>
+
+          }
+        </div>
+        {user ? (
+          <>
+            <span className="text-xs">{user.displayName}</span>
+            <button
+              onClick={handleLogOut}
+              className="w-16 text-[10px] bg-amber-500 p-1  lg:w-24
+                  rounded-xl"
+            >
+              Log Out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="bg-amber-500 p-1 w-24 rounded-xl">
+              Login
+            </button>
+          </Link>
+        )}
+        {/* <Link className="btn btn-warning font-bold" to='/login'>Login</Link> */}
       </div>
     </div>
   );

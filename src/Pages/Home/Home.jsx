@@ -4,6 +4,7 @@ import Contact from "./Contact/Contact";
 import Team from "./Team/Team";
 import Testimonial from "./Testimonial/Testimonial";
 import PopularServiceCard from "./PopularService/PopularServiceCard";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -29,8 +30,10 @@ const Home = () => {
                     ></PopularServiceCard>)
                 }  
             </div>
-            <div className="flex justify-center items-center">
-                <button className="btn btn-warning my-8">Show More</button>
+            <div className="ml-[40%]">
+                <Link to = '/allservices'>
+                    <button className="btn btn-warning my-8">Show More</button>
+                </Link>
             </div> 
         </div>
         <Team></Team>
