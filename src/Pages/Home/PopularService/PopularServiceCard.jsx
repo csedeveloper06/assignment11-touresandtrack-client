@@ -5,8 +5,8 @@ const PopularCard = ({popular}) => {
 
     return (
         <div>
-            <div className="card w-96 h-[500px] bg-base-100 shadow-xl">
-                <figure><img src={image} alt="" /></figure>
+            <div className="card w-[320px] bg-base-100 shadow-xl">
+                <figure><img className="w-[100%] h-60" src={image} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-orange-500 font-bold">{name}</h2>
                     <p className="text-sm text-gray-400">{description}</p>

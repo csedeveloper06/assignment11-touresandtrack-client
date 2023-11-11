@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-    const [popularService, setPopularServices] = useState([]);
+    const [popularServices, setPopularServices] = useState([]);
     useEffect( ()=> {
-        fetch('/public/popularServices.json')
+        fetch('http://localhost:5000/popularTouristServices')
             .then(res => res.json())
             .then(data => setPopularServices(data))
     },[])
@@ -24,7 +24,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 ml-20 gap-5">
                 
                 {
-                    popularService.map(popular => <PopularServiceCard
+                    popularServices.map(popular => <PopularServiceCard
                         key={popular.id}
                         popular={popular}
                     ></PopularServiceCard>)

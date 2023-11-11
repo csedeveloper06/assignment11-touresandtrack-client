@@ -80,30 +80,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div>
-          { user ? <img className="w-16 h-16 rounded-full" src={user.photoURL} alt="" />
-           : 
-          <img className="w-16 h-16 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png"/>
+          { 
+            user ? <img className="w-16 h-16 rounded-full" src={user.photoURL} alt="" />
+            : 
+            <img className="w-16 h-16 rounded-full mr-2" src="https://i.ibb.co/x3RPF21/icon.png"/>
 
           }
         </div>
-        {user ? (
+        {user ?
           <>
             <span className="text-xs">{user.displayName}</span>
-            <button
-              onClick={handleLogOut}
-              className="w-16 text-[10px] bg-amber-500 p-1  lg:w-24
-                  rounded-xl"
-            >
+            <button onClick={handleLogOut} className="w-16 text-[10px] bg-amber-500 p-1  lg:w-24 rounded-xl" >
               Log Out
             </button>
           </>
-        ) : (
+          : 
           <Link to="/login">
             <button className="bg-amber-500 p-1 w-24 rounded-xl">
               Login
             </button>
           </Link>
-        )}
+        }
         {/* <Link className="btn btn-warning font-bold" to='/login'>Login</Link> */}
       </div>
     </div>
