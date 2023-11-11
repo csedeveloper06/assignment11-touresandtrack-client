@@ -6,7 +6,10 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 const AllServices = () => {
 
   const [ selectedValue, setSelectedValue ] = useState('');
+
   const touristServices = useLoaderData();
+  const [ displayServices, setDisplayServices ] = useState(touristServices);
+
   console.log(touristServices);
 
 
@@ -17,7 +20,36 @@ const AllServices = () => {
 
   const handleTravelsTripSearch = (item) => {
     console.log(item);
-
+    if(item === 'Paris Trip'){
+        const parisTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(parisTripServices);
+    }
+    else if(item === 'India Trip'){
+        const indiaTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(indiaTripServices);
+    }
+    else if(item === 'Bangladesh Trip'){
+        const bangladeshTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(bangladeshTripServices);
+    }
+    else if(item === 'Switzerland Trip'){
+        const switzerlandTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(switzerlandTripServices);
+    }
+    else if(item === 'England Trip'){
+        const englandTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(englandTripServices);
+    }
+    else if(item === 'Greece Trip'){
+        const greeceTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(greeceTripServices);
+    }
   };
 
   return (
@@ -25,7 +57,7 @@ const AllServices = () => {
       <div className="form-control mb-10 ml-5">
         <div className="input-group">
           <select className="select select-bordered mt-10 w-1/2 ml-8 md:ml-10 lg:w-1/3 lg:ml-60"
-            value={selectedValue} onChange={handleTravelsTripSelected}>
+             onChange={handleTravelsTripSelected}>
             <option disabled selected>
               Choose Your Travel Destination
             </option>
@@ -43,9 +75,9 @@ const AllServices = () => {
       </div>
       <div>
           <h1></h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
                 {
-                    touristServices.map(touristService => <ServiceCard
+                    displayServices.map(touristService => <ServiceCard
                     key={touristService._id}
                     touristService={touristService}
                     ></ServiceCard>)
