@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const AddAService = () => {
+
+    const { user } = useContext(AuthContext);
 
     const handleAddService = event => {
         event.preventDefault();
@@ -11,7 +15,7 @@ const AddAService = () => {
         const serviceName = form.serviceName.value;
         const serviceProviderName = form.serviceProviderName.value;
         const serviceProviderEmail = form.serviceProviderEmail.value;
-        const serviceProviderImage = form.serviceProviderImage.value;
+        const serviceProviderImage = form.serviceProviderImage.value ;
         const servicePrice = form.servicePrice.value;
         const serviceDescription = form.serviceDescription.value;
         const serviceArea = form.serviceArea.value;
@@ -87,6 +91,9 @@ const AddAService = () => {
                         <label className="input-group">
                             <input 
                                 type="text"
+                                id="readOnlyInput"
+                                value={user ? user.displayName : ''}
+                                readOnly
                                 name="serviceProviderName"
                                 placeholder="Service Provider Name"
                                 className="input input-bordered w-full"
@@ -102,6 +109,9 @@ const AddAService = () => {
                             <input 
                                 type="text"
                                 name="serviceProviderEmail"
+                                id="readOnlyInput"
+                                value={user ? user.email : ''}
+                                readOnly
                                 placeholder="Service Provider Email"
                                 className="input input-bordered w-full"
                             />
@@ -116,6 +126,9 @@ const AddAService = () => {
                             <input
                                 type="text"
                                 name="serviceProviderImage"
+                                id="readOnlyInput"
+                                value={user ? user.photoURL : ''}
+                                readOnly
                                 placeholder="Service Provider Image"
                                 className="input input-bordered w-full"
                             />
