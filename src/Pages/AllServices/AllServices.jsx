@@ -9,6 +9,7 @@ const AllServices = () => {
 
   const touristServices = useLoaderData();
   const [ displayServices, setDisplayServices ] = useState(touristServices);
+  const [ dataLength, setDataLength ] = useState(10);
 
   console.log(touristServices);
 
@@ -74,16 +75,21 @@ const AllServices = () => {
         </div>
       </div>
       <div>
-          <h1></h1>
+          <h1 className="text-5xl text-red-500 font-bold py-5 text-center">All Services</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
                 {
-                    displayServices.map(touristService => <ServiceCard
+                    displayServices.slice(0, dataLength).map(touristService => <ServiceCard
                     key={touristService._id}
                     touristService={touristService}
                     ></ServiceCard>)
                 }
           </div>
       </div>
+      <div className={dataLength === displayServices.length ? 'hidden' : ''}>
+                <button
+                    onClick={() => setDataLength(displayServices.length)}
+                    className="btn btn-primary ml-[45%] mb-10">More</button>
+       </div>
     </div>
   );
 };
