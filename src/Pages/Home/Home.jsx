@@ -5,6 +5,7 @@ import Team from "./Team/Team";
 import Testimonial from "./Testimonial/Testimonial";
 import PopularServiceCard from "./PopularService/PopularServiceCard";
 import { Link } from "react-router-dom";
+import ServiceDetails from "../ServiceDetails/ServiceDetails";
 
 
 const Home = () => {

@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({touristService}) => {
 
-    const { serviceImage, serviceName, serviceDescription, serviceProviderImage, serviceProviderName, 
+    const { _id, serviceImage, serviceName, serviceDescription, serviceProviderImage, serviceProviderName, 
         serviceArea,servicePrice } = touristService;
 
     return (
@@ -21,7 +22,10 @@ const ServiceCard = ({touristService}) => {
                             <img className="w-10 h-10 rounded-full" src="https://i.ibb.co/61fkXjD/Ema-Watt.jpg" alt="" />
                             <p className="text-sm text-orange-500">{serviceProviderName}</p>
                         </div>
-                        <button className="btn btn-sm btn-primary">View Details</button>
+                        <Link to={`/ServiceDetails/${_id}`}>
+                            <button className="btn btn-sm btn-primary">View Details</button>
+                        </Link>
+                        
                     </div>
                 </div>
             </div>
