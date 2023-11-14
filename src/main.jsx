@@ -14,6 +14,7 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './providers/AuthProvider';
 import AddAService from './Pages/AddAService/AddAService';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
+import BookNowForm from './Pages/BookNowForm/BookNowForm';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: "/servicedetails/:_id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ()=> fetch('http://localhost:5000/touristServices')
+      },
+      {
+        path: "/booknowform/:id",
+        element: <BookNowForm></BookNowForm>,
+        loader: ({params}) => fetch(`http://localhost:5000/touristServices/${params.id}`)
       },
       {
         path: '/addaservice',
