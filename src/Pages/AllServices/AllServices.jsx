@@ -51,6 +51,11 @@ const AllServices = () => {
         setDisplayServices('');
         setDisplayServices(greeceTripServices);
     }
+    else if(item === 'Italy Trip'){
+        const italyTripServices = touristServices.filter(touristService => touristService.serviceName === item);
+        setDisplayServices('');
+        setDisplayServices(italyTripServices);
+    }
   };
 
   return (
@@ -68,7 +73,9 @@ const AllServices = () => {
             <option value="Switzerland Trip">Switzerland Trip</option>
             <option value="England Trip">England Trip</option>
             <option value="Greece Trip">Greece Trip</option>
+            <option value="Greece Trip">Italy Trip</option>
           </select>
+            
           <button
             onClick={() => { handleTravelsTripSearch(selectedValue) }} className="btn btn-primary mt-10" > Search
           </button>

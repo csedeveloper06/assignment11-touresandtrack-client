@@ -33,7 +33,7 @@ const Navbar = () => {
                         <NavLink to="/bookings">My Schedules</NavLink>
                       </li>
                       <li>
-                        <NavLink to="/manageservices">Manage Services</NavLink>
+                        <NavLink to="/manageServices">Manage Services</NavLink>
                       </li>
                     </ul>
                   </details>

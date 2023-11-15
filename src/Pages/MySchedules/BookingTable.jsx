@@ -1,5 +1,11 @@
-const BookingTable = ({ booking }) => {
-  const { serviceName, serviceImage, servicePrice, serviceArea, date, serviceProviderName } = booking;
+
+const BookingTable = ({booking}) => {
+
+  const { _id,ServiceName, serviceImage, servicePrice, date, serviceProviderEmail } = booking;
+
+  console.log(_id,ServiceName,serviceProviderEmail);
+  console.log(servicePrice,date);
+
 
   return (
     <tr>
@@ -16,14 +22,13 @@ const BookingTable = ({ booking }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{serviceName}</div>
-            <div className="text-sm opacity-50">{serviceArea}</div>
+            <div className="font-bold">{ServiceName}</div>
+            <div className="text-sm opacity-50">{serviceProviderEmail}</div>
           </div>
         </div>
       </td>
       <td>
         
-         {serviceProviderName}
         <br />
         <span className="badge badge-ghost badge-sm">
           {date}

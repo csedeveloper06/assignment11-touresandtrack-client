@@ -21,7 +21,12 @@ const AddAService = () => {
         const serviceArea = form.serviceArea.value;
 
         const newService = { serviceImage,serviceName,serviceProviderName,serviceProviderEmail,serviceProviderImage,servicePrice,serviceDescription,serviceArea }
+
+        const manageServices = { serviceImage,serviceName,serviceProviderName,serviceProviderEmail,serviceProviderImage,servicePrice,serviceDescription,serviceArea }
+
         console.log(newService);
+
+        console.log(manageServices);
         form.reset();
 
               // send data to the server
@@ -44,6 +49,25 @@ const AddAService = () => {
                             confirmButtonText: 'Cool'
                           })
                     }
+                })
+              fetch('http://localhost:5000/manageServices', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(manageServices)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    // if(data.insertedId){
+                    //     Swal.fire({
+                    //         title: 'Success!',
+                    //         text: 'service added successfully',
+                    //         icon: 'success',
+                    //         confirmButtonText: 'Cool'
+                    //       })
+                    // }
                 })
     }
 

@@ -17,6 +17,7 @@ import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import BookNowForm from './Pages/BookNowForm/BookNowForm';
 import MySchedules from './Pages/MySchedules/MySchedules';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ManageServices from './Pages/ManageServices/ManageServices';
 
 const router = createBrowserRouter([
   {
@@ -49,11 +50,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/addaservice',
-        element: <AddAService></AddAService>
+        element: <PrivateRoute><AddAService></AddAService></PrivateRoute>
       },
       {
-        path: '/manageservices',
-        element: <AddAService></AddAService>
+        path: '/manageServices',
+        element: <PrivateRoute><ManageServices></ManageServices></PrivateRoute>
       },
       {
         path: '/login',
