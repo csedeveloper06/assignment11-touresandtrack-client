@@ -15,6 +15,8 @@ import AuthProvider from './providers/AuthProvider';
 import AddAService from './Pages/AddAService/AddAService';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import BookNowForm from './Pages/BookNowForm/BookNowForm';
+import MySchedules from './Pages/MySchedules/MySchedules';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
         path: '/allservices',
         element: <AllServices></AllServices>,
         loader: () => fetch('http://localhost:5000/touristServices')
+      },
+      {
+        path: '/bookings',
+        element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute>
       },
       {
         path: "/servicedetails/:_id",

@@ -20,22 +20,27 @@ const Navbar = () => {
         <li>
           <NavLink to="/allservices">All Services</NavLink>
         </li>
-        <li tabIndex={0}>
-          <details>
-            <summary>Dashboard</summary>
-            <ul className="p-2">
-              <li>
-                <NavLink to="/addaservice">Add A Service</NavLink>
-              </li>
-              <li>
-                <NavLink to="/myschedules">My Schedules</NavLink>
-              </li>
-              <li>
-                <NavLink to="/manageservices">Manage Services</NavLink>
-              </li>
-            </ul>
-          </details>
-        </li>
+        {
+          user?.email?  <>
+               <li tabIndex={0}>
+                  <details>
+                    <summary>Dashboard</summary>
+                    <ul className="p-2">
+                      <li>
+                        <NavLink to="/addaservice">Add A Service</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/bookings">My Schedules</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="/manageservices">Manage Services</NavLink>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+          </> : ''
+        }
+       
       </ul>
     </>
   );

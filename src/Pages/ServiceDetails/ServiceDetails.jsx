@@ -1,4 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import BookNowForm from "../BookNowForm/BookNowForm";
+
 
 
 
@@ -23,15 +25,23 @@ const ServiceDetails = () => {
                     <p className="text-sm text-orange-300">{serviceDescription}</p>
                     <p className="text-5xl text-orange-500 font-extrabold">{servicePrice}</p>
                     <p className="text-orange-600 font-bold text-2xl">{serviceArea}</p>
-                    <div className="flex justify-start gap-3">
+                    <div className="flex justify-start gap-1">
                         <img className="w-24 h-24 rounded-full" src={serviceProviderImage} />
-                        <span className="text-orange-600 text-3xl font-bold">{serviceProviderName}</span>
+                        <span className="text-orange-600 text-2xl font-bold">{serviceProviderName}</span>
                     </div>
                     <div className="card-actions justify-start">
-                        <Link to={`/booknowform/${_id}`}>
-                            <button className="btn btn-warning w-full" >Book Now</button>
-                        </Link> 
-                        
+                            <button className="btn btn-warning w-full" 
+                                    onClick={()=>document.getElementById('my_modal_4').showModal()}>Book Now</button> 
+                            <dialog id="my_modal_4" className="modal">
+                                <div className="modal-action">
+                                    <div method="dialog">
+                                        <Link to={`/booknowform/${_id}`}>
+                                            <button className="btn btn-primary">Click Me!</button>  
+                                        </Link> 
+                                       
+                                    </div>
+                                </div>
+                            </dialog>    
                     </div>
                 </div>
             </div>

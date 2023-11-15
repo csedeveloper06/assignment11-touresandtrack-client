@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const BookNowForm = () => {
@@ -21,7 +22,7 @@ const BookNowForm = () => {
         const serviceInstruction = form.serviceInstruction.value;
         console.log(serviceName, servicePrice);
 
-        const booking = {
+        const bookings = {
             ServiceName: serviceName,
             serviceImage,
             serviceProviderEmail,
@@ -31,20 +32,26 @@ const BookNowForm = () => {
             serviceInstruction,
           };
 
-          console.log(booking);
+          console.log(bookings);
 
           fetch("http://localhost:5000/bookings", {
             method: "POST",
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(booking),
+            body: JSON.stringify(bookings),
           })
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
               if (data.insertedId) {
-                alert("service booked successfully");
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "You Purchased successfully!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
               }
             });
     }
