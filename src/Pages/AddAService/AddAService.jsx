@@ -26,7 +26,7 @@ const AddAService = () => {
 
         console.log(newService);
 
-        console.log(manageServices);
+        console.log("manageServices:", manageServices);
         form.reset();
 
               // send data to the server
@@ -37,7 +37,7 @@ const AddAService = () => {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify(newService)
-            })
+                })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
@@ -56,18 +56,19 @@ const AddAService = () => {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify(manageServices)
-            })
+                })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    // if(data.insertedId){
-                    //     Swal.fire({
-                    //         title: 'Success!',
-                    //         text: 'service added successfully',
-                    //         icon: 'success',
-                    //         confirmButtonText: 'Cool'
-                    //       })
-                    // }
+                    if(data.insertedId){
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'service added successfully',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                          })
+                        console.log('data inserted')
+                     }
                 })
     }
 

@@ -73,7 +73,7 @@ const AllServices = () => {
             <option value="Switzerland Trip">Switzerland Trip</option>
             <option value="England Trip">England Trip</option>
             <option value="Greece Trip">Greece Trip</option>
-            <option value="Greece Trip">Italy Trip</option>
+            <option value="Italy Trip">Italy Trip</option>
           </select>
             
           <button
