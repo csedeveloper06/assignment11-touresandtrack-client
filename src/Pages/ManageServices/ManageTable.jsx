@@ -1,5 +1,9 @@
-const ManageTable = ({ manageService }) => {
+
+
+const ManageTable = ({ manageService,handleDelete }) => {
+    
   const {
+    _id,
     serviceName,
     serviceImage,
     serviceProviderName,
@@ -9,9 +13,8 @@ const ManageTable = ({ manageService }) => {
     serviceArea,
   } = manageService;
 
-  console.log(serviceArea, servicePrice);
-  console.log(servicePrice);
-
+  
+ 
   return (
     <div className="flex justify-between items-start gap-48">
       <div className="card card-compact w-36 h-48 bg-base-100 shadow-xl">
@@ -31,11 +34,10 @@ const ManageTable = ({ manageService }) => {
       </div>
 
       <div className="flex justify-between gap-5">
-        <button className="btn btn-sm avatar">
+        <button onClick={()=>handleDelete(_id)} className="btn btn-sm avatar">
           <img
             className="w-10 h-10 rounded"
             src="https://i.ibb.co/8NhjyJ1/delete.png"
-            alt=""
           />
         </button>
         <button className="btn btn-sm avatar">
