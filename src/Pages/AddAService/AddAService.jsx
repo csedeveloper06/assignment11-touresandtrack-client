@@ -31,7 +31,7 @@ const AddAService = () => {
 
               // send data to the server
 
-              fetch('http://localhost:5000/touristServices', {
+              fetch('https://assignment11-touresandguides-server.vercel.app', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -50,7 +50,7 @@ const AddAService = () => {
                           })
                     }
                 })
-              fetch('http://localhost:5000/manageServices', {
+              fetch('https://assignment11-touresandguides-server.vercel.app/manageServices', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

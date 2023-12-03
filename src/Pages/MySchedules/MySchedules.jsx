@@ -2,13 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { data } from "autoprefixer";
 import BookingTable from "./BookingTable";
+import StatusService from "./StatusService";
 
 const MySchedules = () => {
   const { user } = useContext(AuthContext);
 
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://assignment11-touresandguides-server.vercel.app/bookings?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -47,7 +48,12 @@ const MySchedules = () => {
           </tbody>
         </table>
       </div>
-    </div>
+      <div className="divider">Pending Works</div>
+      <div className="overflow-x-auto">
+          <StatusService></StatusService>
+      </div>
+     
+  </div>
   );
 };
 

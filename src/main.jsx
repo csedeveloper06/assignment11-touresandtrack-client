@@ -18,6 +18,7 @@ import BookNowForm from './Pages/BookNowForm/BookNowForm';
 import MySchedules from './Pages/MySchedules/MySchedules';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ManageServices from './Pages/ManageServices/ManageServices';
+import UpdateTouristService from './Pages/UpdateTouristService/UpdateTouristService';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/allservices',
         element: <AllServices></AllServices>,
-        loader: () => fetch('http://localhost:5000/touristServices')
+        loader: () => fetch('https://assignment11-touresandguides-server.vercel.app')
       },
       {
         path: '/bookings',
@@ -41,12 +42,12 @@ const router = createBrowserRouter([
       {
         path: "/servicedetails/:_id",
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/touristServices')
+        loader: ()=> fetch('https://assignment11-touresandguides-server.vercel.app')
       },
       {
         path: "/booknowform/:id",
-        element: <BookNowForm></BookNowForm>,
-        loader: ({params}) => fetch(`http://localhost:5000/touristServices/${params.id}`)
+        element: <PrivateRoute> <BookNowForm></BookNowForm></PrivateRoute>,
+        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/${params.id}`)
       },
       {
         path: '/addaservice',
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
       {
         path: '/manageServices',
         element: <PrivateRoute><ManageServices></ManageServices></PrivateRoute>
+      },
+      {
+        path: 'updatetouristservice/:id',
+        element: <PrivateRoute><UpdateTouristService></UpdateTouristService></PrivateRoute>,
+        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/${params.id}`)
       },
       {
         path: '/login',

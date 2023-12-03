@@ -12,7 +12,7 @@ const Home = () => {
 
     const [popularServices, setPopularServices] = useState([]);
     useEffect( ()=> {
-        fetch('http://localhost:5000/popularTouristServices')
+        fetch('https://assignment11-touresandguides-server.vercel.app/popularTouristServices')
             .then(res => res.json())
             .then(data => setPopularServices(data))
     },[])

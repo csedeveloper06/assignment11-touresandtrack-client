@@ -34,7 +34,7 @@ const BookNowForm = () => {
 
           console.log(bookings);
 
-          fetch("http://localhost:5000/bookings", {
+          fetch("https://assignment11-touresandguides-server.vercel.app/bookings", {
             method: "POST",
             headers: {
               "content-type": "application/json",

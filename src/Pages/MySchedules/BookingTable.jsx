@@ -22,8 +22,8 @@ const BookingTable = ({booking}) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{ServiceName}</div>
-            <div className="text-sm opacity-50">{serviceProviderEmail}</div>
+              <div className="font-bold">{ServiceName}</div>
+              <div className="text-sm opacity-50">{serviceProviderEmail}</div>
           </div>
         </div>
       </td>

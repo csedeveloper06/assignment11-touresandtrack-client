@@ -11,7 +11,7 @@ const ManageServices = () => {
   const [manageServices, setManageServices] = useState([]);
 
 
-  const url = `http://localhost:5000/manageServices?email=${user?.email}`;
+  const url = `https://assignment11-touresandguides-server.vercel.app/manageServices?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -19,7 +19,7 @@ const ManageServices = () => {
         .then(data => {
             setManageServices(data);
         });
-    }, []);
+    }, [url]);
 
   console.log(manageServices)
   
@@ -34,7 +34,7 @@ const ManageServices = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/manageServices/${id}`, {
+          fetch(`https://assignment11-touresandguides-server.vercel.app/manageServices/${id}`, {
             method: "DELETE"
           })
             .then((res) => res.json())
@@ -52,7 +52,7 @@ const ManageServices = () => {
             });
         }
      }); 
- }
+    }
 
   return (
     <div>
@@ -68,8 +68,6 @@ const ManageServices = () => {
                    
                 }
             </div>
-          
-
         </div>
     </div>
   );
