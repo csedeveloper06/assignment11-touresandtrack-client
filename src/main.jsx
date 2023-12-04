@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/allservices',
         element: <AllServices></AllServices>,
-        loader: () => fetch('https://assignment11-touresandguides-server.vercel.app')
+        loader: () => fetch('https://assignment11-touresandguides-server.vercel.app/touristServices')
       },
       {
         path: '/bookings',
@@ -42,12 +42,12 @@ const router = createBrowserRouter([
       {
         path: "/servicedetails/:_id",
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: ()=> fetch('https://assignment11-touresandguides-server.vercel.app')
+        loader: ()=> fetch('https://assignment11-touresandguides-server.vercel.app/touristServices')
       },
       {
         path: "/booknowform/:id",
         element: <PrivateRoute> <BookNowForm></BookNowForm></PrivateRoute>,
-        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/touristServices/${params.id}`)
       },
       {
         path: '/addaservice',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: 'updatetouristservice/:id',
         element: <PrivateRoute><UpdateTouristService></UpdateTouristService></PrivateRoute>,
-        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/touristServices/${params.id}`)
       },
       {
         path: '/login',
