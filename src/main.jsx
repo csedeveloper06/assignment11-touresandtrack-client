@@ -58,9 +58,9 @@ const router = createBrowserRouter([
         element: <PrivateRoute><ManageServices></ManageServices></PrivateRoute>
       },
       {
-        path: 'updatetouristservice/:id',
+        path: '/updatetouristservice/:id',
         element: <PrivateRoute><UpdateTouristService></UpdateTouristService></PrivateRoute>,
-        loader: ({params}) => fetch(`https://assignment11-touresandguides-server.vercel.app/touristServices/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/manageServices/${params.id}`)
       },
       {
         path: '/login',

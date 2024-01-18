@@ -31,7 +31,7 @@ const AddAService = () => {
 
               // send data to the server
 
-              fetch('https://assignment11-touresandguides-server.vercel.app', {
+              fetch('https://assignment11-touresandguides-server.vercel.app/touristServices', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

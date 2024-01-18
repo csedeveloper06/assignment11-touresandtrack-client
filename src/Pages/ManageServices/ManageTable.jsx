@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ManageTable = ({ manageService, handleDelete }) => {
+const ManageTable = ({ manageService, handleDelete}) => {
   
   const {
     _id,
