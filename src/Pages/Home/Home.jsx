@@ -5,6 +5,7 @@ import Team from "./Team/Team";
 import Testimonial from "./Testimonial/Testimonial";
 import PopularServiceCard from "./PopularService/PopularServiceCard";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -19,6 +20,9 @@ const Home = () => {
 
   return (
     <div>
+        <Helmet>
+            <title>Home</title>
+        </Helmet>
         <Banner></Banner>
         <div className="my-10">
             <h1 className="p-5 text-5xl text-center text-red-500 font-bold">Popular Services</h1>

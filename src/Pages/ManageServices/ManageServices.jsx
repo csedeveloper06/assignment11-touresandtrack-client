@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ManageTable from "./ManageTable";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const ManageServices = () => {
@@ -56,6 +57,9 @@ const ManageServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Manage Services</title>
+      </Helmet>
         <h1 className="text-3xl text-center text-orange-500 font-bold my-8">My Manage Services:{manageServices.length}</h1>
         <div className="flex justify-center items-center gap-8">
             <div className="grid grid-cols-1 gap-3">

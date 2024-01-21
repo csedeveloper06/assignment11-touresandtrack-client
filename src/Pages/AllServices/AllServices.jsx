@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ServiceCard from "../ServiceCard/ServiceCard";
+import { Helmet } from "react-helmet-async";
 
 
 const AllServices = () => {
@@ -60,6 +61,9 @@ const AllServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All Services</title>
+      </Helmet>
       <div className="form-control mb-10 ml-5">
         <div className="input-group">
           <select className="select select-bordered mt-10 w-1/2 ml-8 md:ml-10 lg:w-1/3 lg:ml-60"

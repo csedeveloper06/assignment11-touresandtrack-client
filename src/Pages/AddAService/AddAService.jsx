@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const AddAService = () => {
@@ -74,6 +75,9 @@ const AddAService = () => {
 
     return (
         <div className="bg-[#fffff4] mb-16 p-3">
+            <Helmet>
+                <title>Add Service</title>
+            </Helmet>
              <h2 className="text-3xl font-extrabold text-center">Add A Service Form</h2>
              <form onSubmit={handleAddService} >
                 <div className="md:flex mb-8">

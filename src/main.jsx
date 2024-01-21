@@ -19,6 +19,8 @@ import MySchedules from './Pages/MySchedules/MySchedules';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ManageServices from './Pages/ManageServices/ManageServices';
 import UpdateTouristService from './Pages/UpdateTouristService/UpdateTouristService';
+import UsersBookings from './Pages/MySchedules/UsersBookings';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/bookings',
         element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute>
+      },
+      {
+        path: '/usersbookings',
+        element: <UsersBookings></UsersBookings>
       },
       {
         path: "/servicedetails/:_id",
@@ -78,7 +84,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
      <AuthProvider>
-      <RouterProvider router={router} />
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

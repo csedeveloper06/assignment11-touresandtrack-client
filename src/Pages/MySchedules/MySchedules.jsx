@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { data } from "autoprefixer";
 import BookingTable from "./BookingTable";
-import StatusService from "./StatusService";
+import { Helmet } from "react-helmet-async";
+
 
 const MySchedules = () => {
   const { user } = useContext(AuthContext);
@@ -17,10 +17,13 @@ const MySchedules = () => {
       .then(data => {
         setBookings(data);
       });
-  }, []);
+  }, [url]);
 
   return (
     <div>
+      <Helmet>
+        <title>My Schedules</title>
+      </Helmet>
       <h1 className="text-3xl">My Bookings: {bookings.length}</h1>
       <div className="overflow-x-auto">
         <table className="table">
@@ -49,9 +52,9 @@ const MySchedules = () => {
         </table>
       </div>
       <div className="divider">Pending Works</div>
-      <div className="overflow-x-auto">
+      {/* <div className="overflow-x-auto">
           <StatusService></StatusService>
-      </div>
+      </div> */}
      
   </div>
   );
