@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import BookingTable from "./BookingTable";
 import { Helmet } from "react-helmet-async";
+import UsersBookings from "./UsersBookings";
 
 
 const MySchedules = () => {
@@ -22,7 +23,7 @@ const MySchedules = () => {
   return (
     <div>
       <Helmet>
-        <title>My Schedules</title>
+        <title>ToursNTracks | My Schedules</title>
       </Helmet>
       <h1 className="text-3xl">My Bookings: {bookings.length}</h1>
       <div className="overflow-x-auto">
@@ -52,9 +53,9 @@ const MySchedules = () => {
         </table>
       </div>
       <div className="divider">Pending Works</div>
-      {/* <div className="overflow-x-auto">
-          <StatusService></StatusService>
-      </div> */}
+      <div className="overflow-x-auto">
+          <UsersBookings></UsersBookings>
+      </div>
      
   </div>
   );

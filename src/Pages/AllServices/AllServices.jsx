@@ -62,7 +62,7 @@ const AllServices = () => {
   return (
     <div>
       <Helmet>
-        <title>All Services</title>
+        <title>ToursNTracks | All Services</title>
       </Helmet>
       <div className="form-control mb-10 ml-5">
         <div className="input-group">

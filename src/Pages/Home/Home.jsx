@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div>
         <Helmet>
-            <title>Home</title>
+            <title>ToursNTracks | Home</title>
         </Helmet>
         <Banner></Banner>
         <div className="my-10">

@@ -76,7 +76,7 @@ const AddAService = () => {
     return (
         <div className="bg-[#fffff4] mb-16 p-3">
             <Helmet>
-                <title>Add Service</title>
+                <title>ToursNTracks | Add Service</title>
             </Helmet>
              <h2 className="text-3xl font-extrabold text-center">Add A Service Form</h2>
              <form onSubmit={handleAddService} >

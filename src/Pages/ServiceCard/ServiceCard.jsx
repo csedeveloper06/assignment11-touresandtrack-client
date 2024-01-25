@@ -5,6 +5,7 @@ const ServiceCard = ({touristService}) => {
 
     const { _id, serviceImage, serviceName, serviceDescription, serviceProviderImage, serviceProviderName, 
         serviceArea,servicePrice } = touristService;
+   
 
     return (
         <div>
@@ -24,7 +25,7 @@ const ServiceCard = ({touristService}) => {
                     <div className="card-actions">
                       
                         <Link to={`/ServiceDetails/${_id}`}>
-                            <button className="btn btn-primary justify-center">View Details</button>
+                                <button className="btn btn-primary justify-center">View Details</button>
                         </Link>
                         
                     </div>

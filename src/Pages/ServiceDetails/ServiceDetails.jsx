@@ -1,13 +1,17 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import OtherServiceCard from "../OtherServiceCard/OtherServiceCard";
+// import { useContext, useState } from "react";
+// import BookingModal from "../Modal/BookingModal";
+// import { AuthContext } from "../../providers/AuthProvider";
 // import BookNowForm from "../BookNowForm/BookNowForm";
-
-
-
 
 
 const ServiceDetails = () => {
 
+    // const { user } = useContext( AuthContext );
     const touristServices = useLoaderData();
+    console.log(touristServices);
    
 
     const {_id} = useParams();
@@ -15,9 +19,17 @@ const ServiceDetails = () => {
     
     const { serviceName, serviceImage, serviceDescription, serviceProviderImage,serviceProviderName, 
         serviceArea, servicePrice } = touristService;
-
+    
+    const otherServices = touristServices.filter(otherService => 
+        otherService.serviceProviderEmail === touristService.serviceProviderEmail)
+    console.log(otherServices);
+    
+    console.log(touristService);
     return (
         <div className="my-12">
+            <Helmet>
+                <title>ToursNTracks | Service Details</title>
+            </Helmet>
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img src={serviceImage} /></figure>
                 <div className="card-body">
@@ -30,22 +42,28 @@ const ServiceDetails = () => {
                         <span className="text-orange-600 text-2xl font-bold">{serviceProviderName}</span>
                     </div>
                     <div className="card-actions justify-start">
-                            <button className="btn btn-warning w-full" 
-                                    onClick={()=>document.getElementById('my_modal_4').showModal()}>Book Now</button> 
-                            <dialog id="my_modal_4" className="modal">
-                                <div className="modal-action">
-                                    <div method="dialog">
-                                        <Link to={`/booknowform/${_id}`}>
-                                            <button className="btn btn-primary">Click Me!</button>  
-                                        </Link> 
-                                       
-                                    </div>
-                                </div>
-                            </dialog>    
+                        <Link to={`/booknowform/${_id}`}>
+                            <button className="btn btn-warning w-full">Book Now</button>  
+                        </Link>  
                     </div>
                 </div>
             </div>
-
+            <div className="mb-28">
+                <h1 className="text-5xl text-red-500 font-bold py-5 text-center">
+                    {/* other service cards headline */}
+                    Other Services
+                </h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+                    {
+                        otherServices.map(otherService => <OtherServiceCard
+                            key={otherService._id}
+                            otherService={otherService}>
+                            </OtherServiceCard>
+                        )   
+                    }
+                </div>
+            </div>
+            {/* <BookingModal closeModal={closeModal} isOpen={isOpen} /> */}
         </div>
     );
 };

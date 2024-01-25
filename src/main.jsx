@@ -21,6 +21,7 @@ import ManageServices from './Pages/ManageServices/ManageServices';
 import UpdateTouristService from './Pages/UpdateTouristService/UpdateTouristService';
 import UsersBookings from './Pages/MySchedules/UsersBookings';
 import { HelmetProvider } from 'react-helmet-async';
+import OtherServiceCardDetails from './Pages/OtherServiceCardDetails/OtherServiceCardDetails';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         path: "/servicedetails/:_id",
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
         loader: ()=> fetch('https://assignment11-touresandguides-server.vercel.app/touristServices')
+      },
+      {
+        path: "/otherServiceCardDetails/:_id",
+        element: <PrivateRoute><OtherServiceCardDetails></OtherServiceCardDetails></PrivateRoute>,
+        loader: ()=> fetch('http://localhost:5000/touristServices')
       },
       {
         path: "/booknowform/:id",

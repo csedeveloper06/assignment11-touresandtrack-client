@@ -2,12 +2,14 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const BookNowForm = () => {
 
     const touristService = useLoaderData();
     const { serviceName, serviceImage, serviceProviderEmail, servicePrice } = touristService;
+    console.log(touristService);
     const {user} = useContext(AuthContext);
 
     const handleBookService = event => {
@@ -58,6 +60,9 @@ const BookNowForm = () => {
 
     return (
         <div className="bg-[#fffff4] mb-16 p-3">
+            <Helmet>
+                <title>ToursNTracks | BookNowForm</title>
+            </Helmet>
             <h1 className="text-4xl font-bold text-red-500 text-center">About {serviceName}</h1>
             <form onSubmit={handleBookService}>
                 <div className="md:flex mb-8">
